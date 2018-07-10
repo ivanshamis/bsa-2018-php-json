@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
-class Currency
+use Illuminate\Database\Eloquent\Model;
+
+class Currency extends Model
 {
+    
 }

@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
-class Wallet
+use Illuminate\Database\Eloquent\Model;
+
+class Wallet extends Model
 {
+    
 }
