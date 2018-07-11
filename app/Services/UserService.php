@@ -10,21 +10,24 @@ class UserService implements UserServiceInterface
 {
     public function findAll(): Collection
     {
-        
+        return User::all();
     }
 
     public function findById(int $id): ?User
     {
-
+        return User::find($id);
     }
 
     public function save(SaveUserRequest $request): User
     {
-        return new User();   
+        return User::updateOrCreate(
+            ['id' => $request->getId()],
+            ['name' => $request->getName(), 'email' => $request->getEmail()]
+        );
     }
 
     public function delete(int $id): void
     {
-        
+        User::destroy($id);
     }
 }

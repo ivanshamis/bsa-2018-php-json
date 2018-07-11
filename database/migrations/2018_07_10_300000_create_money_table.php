@@ -16,10 +16,13 @@ class CreateMoneyTable extends Migration
         Schema::create('money', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('currency_id');
-            $table->foreign('currency_id')->references('id')->on('currency')->onDelete('cascade');
+            $table->foreign('currency_id')->references('id')->on('currency');
             $table->float('amount');
             $table->unsignedInteger('wallet_id');    
-            $table->foreign('wallet_id')->references('id')->on('wallet')->onDelete('cascade');
+            $table->foreign('wallet_id')->references('id')->on('wallet');
+        });
+        Schema::table('money', function ($table) {
+            $table->softDeletes();
         });
     }
 
