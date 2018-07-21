@@ -13,7 +13,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        JsonApiException::class,
     ];
 
     /**
@@ -46,6 +46,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($this->isJsonApi($request, $e)) {
+            return $this->renderJsonApi($request, $e);
+          }
+          
         return parent::render($request, $exception);
     }
 }

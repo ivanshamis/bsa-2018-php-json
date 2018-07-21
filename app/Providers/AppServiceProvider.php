@@ -7,6 +7,7 @@ use App\Services\{CurrencyServiceInterface,CurrencyService};
 use App\Services\{UserServiceInterface,UserService};
 use App\Services\{WalletServiceInterface,WalletService};
 use App\Services\{MoneyServiceInterface,MoneyService};
+use JsonApi;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        JsonApi::defaultApi('v1');
     }
 
     /**
