@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Wallets;
+namespace App\JsonApi\Wallet;
 
 use CloudCreativity\LaravelJsonApi\Contracts\Validators\RelationshipsValidatorInterface;
 use CloudCreativity\LaravelJsonApi\Validators\AbstractValidatorProvider;
@@ -11,7 +11,11 @@ class Validators extends AbstractValidatorProvider
     /**
      * @var string
      */
-    protected $resourceType = 'wallets';
+    protected $resourceType = 'wallet';
+
+    protected $allowedSortParameters = [
+        'user_id'
+    ];
 
     /**
      * Get the validation rules for the resource attributes.

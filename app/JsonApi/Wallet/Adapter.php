@@ -1,11 +1,12 @@
 <?php
 
-namespace App\JsonApi\Wallets;
+namespace App\JsonApi\Wallet;
 
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;
 use CloudCreativity\LaravelJsonApi\Pagination\StandardStrategy;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
+use App\Entity\Wallet;
 
 class Adapter extends AbstractAdapter
 {
@@ -15,7 +16,7 @@ class Adapter extends AbstractAdapter
      *
      * @var array
      */
-    protected $attributes = [];
+    protected $attributes = ['user_id'];
 
     /**
      * Adapter constructor.
@@ -24,7 +25,7 @@ class Adapter extends AbstractAdapter
      */
     public function __construct(StandardStrategy $paging)
     {
-        parent::__construct(new \App\Wallet(), $paging);
+        parent::__construct(new Wallet(), $paging);
     }
 
     /**

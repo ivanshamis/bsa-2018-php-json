@@ -41,7 +41,6 @@ return [
     | `'posts' => App\Post::class`
     */
     'resources' => [
-        'posts' => App\Post::class,
         'wallet' => App\Entity\Wallet::class,
     ],
 
@@ -79,7 +78,7 @@ return [
     */
     'url' => [
         'host' => null,
-        'namespace' => '/api/v1',
+        'namespace' => '/v1',
         'name' => 'api:v1:',
     ],
 

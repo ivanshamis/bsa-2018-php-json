@@ -18,6 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-JsonApi::register('default', ['namespace' => 'Api'], function ($api, $router) {
+JsonApi::register('v1', ['namespace' => 'Api'], function ($api, $router) {
     $api->resource('wallet', ['only' => ['index', 'read']]);
 });

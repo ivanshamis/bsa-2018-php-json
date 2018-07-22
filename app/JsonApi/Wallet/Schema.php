@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Wallets;
+namespace App\JsonApi\Wallet;
 
 use Neomerx\JsonApi\Schema\SchemaProvider;
 
@@ -10,7 +10,7 @@ class Schema extends SchemaProvider
     /**
      * @var string
      */
-    protected $resourceType = 'wallets';
+    protected $resourceType = 'wallet';
 
     /**
      * @param $resource
@@ -30,8 +30,8 @@ class Schema extends SchemaProvider
     public function getAttributes($resource)
     {
         return [
-            'created-at' => $resource->created_at->toAtomString(),
-            'updated-at' => $resource->updated_at->toAtomString(),
+            //'created-at' => $resource->created_at->toAtomString(),
+            //'updated-at' => $resource->updated_at->toAtomString(),
         ];
     }
 }
